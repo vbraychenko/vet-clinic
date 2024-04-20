@@ -55,7 +55,7 @@ public class PetService {
         System.out.print("Name: ");
         pet.setName(Main.SCANNER.nextLine());
 
-        System.out.print("Sex (male / female):");
+        System.out.print("Sex (male / female): ");
         pet.setSex(Main.SCANNER.nextLine());
 
         return pet;
