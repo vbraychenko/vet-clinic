@@ -1,6 +1,6 @@
 package main.java.com.magicvet.model;
 
-public class Pet {
+public abstract class Pet {
 
     private String type;
     private String sex;
@@ -33,18 +33,22 @@ public class Pet {
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public String getOwnerName(String s) {
+
         return ownerName;
     }
 
     public void setOwnerName(String ownerName) {
+
         this.ownerName = ownerName;
     }
 }
