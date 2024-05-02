@@ -8,6 +8,17 @@ public abstract class Pet {
     private String name;
     private String ownerName;
 
+    @Override
+    public String toString() {
+        return "Pet {"
+                + "type = " + type
+                + ", sex = " + sex
+                + ", age = " + age
+                + ", name = " + name
+                + ", ownerName = " + ownerName
+                + "}";
+    }
+
     public String getType() {
         return type;
     }
@@ -33,21 +44,17 @@ public abstract class Pet {
     }
 
     public String getName() {
-
         return name;
     }
 
     public void setName(String name) {
-
         this.name = name;
     }
-
-    public void getOwnerName(String s) {
-
+    public String getOwnerName(String s) {
+        return ownerName;
     }
 
     public void setOwnerName(String ownerName) {
-
         this.ownerName = ownerName;
     }
 }
