@@ -50,8 +50,7 @@ public abstract class Pet {
     public void setName(String name) {
         this.name = name;
     }
-    public String getOwnerName(String s) {
-        return ownerName;
+    public void getOwnerName(String s) {
     }
 
     public void setOwnerName(String ownerName) {
