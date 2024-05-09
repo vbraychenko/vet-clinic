@@ -18,11 +18,15 @@ public class ApplicationRunner {
                 System.out.println("Adding a new pet.");
 
                 Pet pet = petService.registerNewPet();
+
+                if (pet != null) {
                 client.setPet(pet);
                 pet.getOwnerName(client.getFirstName() + " " + client.getLastName());
                 System.out.println("Pet has been added.");
+                }
 
                 System.out.println(client);
+
             }
 
         }
