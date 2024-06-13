@@ -57,7 +57,8 @@ public abstract class Pet {
         this.name = name;
     }
 
-    public void getOwnerName() {
+    public String getOwnerName() {
+        return ownerName;
     }
 
     public void setOwnerName(String ownerName) {
