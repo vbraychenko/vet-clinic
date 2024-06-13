@@ -2,6 +2,8 @@ package main.java.com.magicvet.model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Client {
@@ -9,8 +11,9 @@ public class Client {
     private String firstName;
     private String lastName;
     private String email;
-    private Pet pet;
+    private List<Pet> pets = new ArrayList<>();
     private final LocalDateTime clientRegistrationDate = LocalDateTime.now();
+    private Location location;
 
     @Override
     public String toString() {
@@ -18,8 +21,9 @@ public class Client {
                 + "\n\tfirstName = " + firstName
                 + ", lastName = " + lastName
                 + ", email = " + email
+                + ", location = " + location
                 + ", clientRegistrationDate = " + clientRegistrationDate.format(FORMATTER)
-                + ",\n\tpet = " + pet
+                + ",\n\tpets = " + pets
                 + "\n}";
     }
 
@@ -31,13 +35,13 @@ public class Client {
         return Objects.equals(firstName, client.firstName)
                 && Objects.equals(lastName, client.lastName)
                 && Objects.equals(email, client.email)
-                && Objects.equals(pet, client.pet);
+                && Objects.equals(pets, client.pets);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(firstName, lastName, email, pet);
+        return Objects.hash(firstName, lastName, email, pets);
     }
 
     public void setFirstName(String firstName) {
@@ -70,12 +74,30 @@ public class Client {
         return email;
     }
 
-    public Pet getPet() {
-        return pet;
+    public List<Pet> getPets() {
+
+        return pets;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setPets(List<Pet> pets) {
+
+        this.pets = pets;
+    }
+
+    public void addPet(Pet pet) {
+        pets.add(pet);
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public enum Location {
+        KYIV, LVIV, ODESA, UNKNOWN
     }
 }
 
